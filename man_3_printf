@@ -1,0 +1,41 @@
+.\" Man page for _printf
+.\"
+.TH _printf "29 Mar 2023" "Version 1.0" "C Library Functions with _printf"
+.SH NAME
+_printf \- formatting and printing data that were created with help of _printf
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf() function writes output to stdout, the standard output stream. The output is formatted according to the format string format.
+.PP
+The format string may contain conversion specifications that begin with the % character. Each conversion specification is replaced with appropriate arguments from the argument list, and the resulting output is written to stdout.
+.PP
+The format string may also contain ordinary characters, which are written to stdout as is.
+.PP
+If the format string ends with a newline character ('\n'), the output is followed by a newline character. Otherwise, the output is not followed by a newline character.
+.SH RETURN VALUE
+The _printf() function returns the number of characters written to stdout, excluding the null byte at the end of the string. If an output error occurs, a negative value is returned.
+.SH EXAMPLES
+The following code snippet demonstrates the use of _printf():
+.PP
+.nf
+#include "main.h"
+int main(void)
+{
+    _printf("%b\n", 98);
+    return (0);
+}
+.fi
+.SH SEE ALSO
+fprintf, sprintf, snprintf, printf,
+.SH NOTES
+The behavior of _printf() is undefined if the format string contains conversion specifications that refer to arguments beyond the number of arguments actually passed.
+
+.SH AUTHOR
+Robinson Muñetón https://github.com/RM92023
+
+Camilo Palacios  https://github.com/jcamilop
+
+Santiago Hinestroza https://github.com/SANTIAGOH22
